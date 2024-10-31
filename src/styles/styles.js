@@ -8,3 +8,14 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Poppins';
     }
 `
+
+export const cores = {
+    azulmain: "#0d6efd",
+    preto200: "#323434",
+    cinza300: "#717f7f",
+    cinza200: "#a0a0a0",
+    cinza100: "#e4e4e4",
+    branco100: "#f1f5f4",
+    branco: "#fff",
+    vermelho: "#df5951"
+}

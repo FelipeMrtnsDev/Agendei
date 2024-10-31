@@ -15,7 +15,7 @@ function FormRegister() {
         e.preventDefault()
         
         try {
-            const response = await fetch("http://localhost:3030/auth/register", {
+            const response = await fetch("http://localhost:3010/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -57,7 +57,9 @@ function FormRegister() {
                     <button type='submit' className='botao'>Criar minha conta</button>
                 </Formulario>
                 <Registrar>
-                    <p>Já tenho uma conta. <Link to="/login">Acessar agora!</Link></p>
+                    <div className='login'>
+                        <p>Já tenho uma conta. <Link to="/login">Acessar agora!</Link></p>
+                    </div>
                 </Registrar>
             </Login>
             <Imagem>

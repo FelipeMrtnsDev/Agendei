@@ -14,7 +14,7 @@ function FormLogin() {
         e.preventDefault()
         
         try {
-            const response = await fetch("http://localhost:3030/auth/login", {
+            const response = await fetch("http://localhost:3010/auth/login", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -27,7 +27,7 @@ function FormLogin() {
             if (response.ok) {
                 localStorage.setItem('token', data.token)
                 alert('Login realizado com sucesso!')
-                navigate('/')
+                navigate('/dashboard')
             } else {
                 alert("Erro ao fazer login: " + data.msg);
             }
@@ -55,7 +55,9 @@ function FormLogin() {
                     <button type='submit' className='botao'>Acessar</button>
                 </Formulario>
                 <Registrar>
-                    <p>Não tenho conta. <Link to="/register">Criar conta agora</Link></p>
+                    <div className='registrar'>
+                        <p>Não tenho conta. <Link to="/register">Criar conta agora</Link></p>
+                    </div>
                 </Registrar>
             </Login>
             <Imagem>

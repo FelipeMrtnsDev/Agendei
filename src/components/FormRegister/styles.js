@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { cores } from '../../styles/styles'
 
 export const Container = styled.div`
     display: grid;
@@ -58,44 +59,44 @@ export const Formulario = styled.form`
     & .nome {
         margin-bottom: 16px;
         padding: 10px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid ${cores.cinza100};
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid #DFDFDF;
+            outline: 3px solid ${cores.cinza100};
         }
     }
 
     & .email {
         margin-bottom: 16px;
         padding: 10px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid ${cores.cinza100};
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid #DFDFDF;
+            outline: 3px solid ${cores.cinza100};
         }
     }
 
     & .senha {
         margin-bottom: 16px;
         padding: 10px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid ${cores.cinza100};
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid #DFDFDF;
+            outline: 3px solid ${cores.cinza100};
         }
     }
 
     & .confirmar-senha {
         margin-bottom: 16px;
         padding: 10px;
-        border: 1px solid #DFDFDF;
+        border: 1px solid ${cores.cinza100};
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid #DFDFDF;
+            outline: 3px solid ${cores.cinza100};
         }
     }
 
@@ -103,9 +104,9 @@ export const Formulario = styled.form`
         margin-bottom: 16px;
         padding: 10px;
         border: none;
-        background-color: #0D6EFD;
+        background-color: ${cores.azulmain};
         border-radius: 4px;
-        color: #fff;
+        color: ${cores.branco};
         cursor: pointer;
         font-weight: 600;
         transition: 0.5s all ease;
@@ -119,12 +120,17 @@ export const Formulario = styled.form`
 `
 
 export const Registrar = styled.div`
-    text-align: center;
-    position: absolute;
-    bottom: 44px;
+    display: flex;
+    height: 100%;
 
+    & .login {
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        margin-bottom: 44px;
+    }
     a {
-        color: #0D6EFD;
+        color: ${cores.azulmain};
         text-decoration: none;
     }
 `
