@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const cores = {
+    azulclaro: "#D7E7FF",
     azulmain: "#0d6efd",
     preto200: "#323434",
     cinza300: "#717f7f",

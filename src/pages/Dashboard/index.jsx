@@ -1,13 +1,13 @@
-import CardAgendamento from "../../components/CardAgendamento"
-import Agendamentos from "../../components/Agendamentos"
-import ListCardAgendamentos from "../../components/ListCardAgendamentos"
+import Agende from "../../components/Agende"
+import ListCardDoutores from "../../components/ListCardDoutores"
+import Container from "./styles"
 
 function Dashboard() {
     return (
-        <div>
-            <Agendamentos />
-            <ListCardAgendamentos />
-        </div>
+        <Container>
+            <Agende />
+            <ListCardDoutores />
+        </Container>
     )
 }
 export default Dashboard
