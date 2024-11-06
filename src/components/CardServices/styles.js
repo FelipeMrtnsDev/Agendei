@@ -7,10 +7,7 @@ export const ServicesContainer = styled.div`
     max-width: 768px;
     margin: 0 auto;
     border-bottom: 1px solid ${cores.cinza200};
-    border-top: 1px solid ${cores.cinza200};
     padding: 16px;
-
-
 
     & .price {
         display: flex;

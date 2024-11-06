@@ -11,7 +11,7 @@ function FormLogin() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-
+    
         try {
             const response = await fetch("http://localhost:3010/auth/login", {
                 method: 'POST',
@@ -20,20 +20,21 @@ function FormLogin() {
                 },
                 body: JSON.stringify({ email, password: senha })
             });
-
+    
             const data = await response.json();
-
-            if (response.ok) {
-                // Ajuste: usar a mesma chave "authToken" que foi usada no componente ListCardAgendamentos
+    
+            if (response.ok && data.token) {
                 localStorage.setItem('authToken', data.token);
                 navigate('/dashboard');
             } else {
-                alert("Erro ao fazer login: " + data.msg);
+                alert("Erro ao fazer login: " + (data.msg || "Credenciais inválidas"));
             }
         } catch (error) {
             console.error("Erro ao realizar login:", error);
+            alert("Erro ao realizar login. Verifique sua conexão e tente novamente.");
         }
     };
+    
 
     return (
         <Container>
