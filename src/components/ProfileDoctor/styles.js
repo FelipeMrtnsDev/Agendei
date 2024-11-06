@@ -9,6 +9,7 @@ export const InfosDoctorContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 32px;
 
     & .itens-s-v {
         display: flex;

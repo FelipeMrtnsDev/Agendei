@@ -1,14 +1,55 @@
-import medica from "../../assets/images/medica.png"
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Doutor, InfosDoctorContainer } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import medico from '../../assets/images/medico.png'
+import medica from '../../assets/images/medica.png'
+
 
 function ProfileDoctor() {
     const navigate = useNavigate()
+    const { id } = useParams()
+    const [name, setName] = useState('')
+    const [gender, setGender] = useState('')
+    const [area, setArea] = useState('')
+    const [image, setImage] = useState('')
+
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        fetch(`http://localhost:3010/doctors/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            setArea(data.doctor.area)
+            setName(data.doctor.name)
+            setGender(data.doctor.gender)
+            console.log(data)
+        })
+        .catch((error) => {
+            console.error("Algo deu errado!", error)
+        }) 
+    }, [id])
 
     const handleArrowClick = () => {
         navigate(`/dashboard`);
     };
+
+    useEffect(() => {
+        if (gender === 'homem') {
+            setImage(medico);
+        } else if (gender === 'mulher') {
+            setImage(medica);
+        } else {
+            setImage('');
+        }
+    }, [gender]);
 
     return(
         <InfosDoctorContainer>
@@ -21,9 +62,9 @@ function ProfileDoctor() {
                 </div>
             </div>
             <Doutor>
-                <img src={medica} alt=""  className="image"/>
-                <h2>Kamila</h2>
-                <p>Cirurgia plástica</p>
+                <img src={image} alt={image}  className="image"/>
+                <h2>{name}</h2>
+                <p>{area}</p>
             </Doutor>
         </InfosDoctorContainer>
     )
