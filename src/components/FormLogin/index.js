@@ -25,7 +25,7 @@ function FormLogin() {
     
             if (response.ok && data.token) {
                 localStorage.setItem('authToken', data.token);
-                navigate('/dashboard');
+                navigate('/home');
             } else {
                 alert("Erro ao fazer login: " + (data.msg || "Credenciais inválidas"));
             }

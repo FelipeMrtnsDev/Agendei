@@ -39,6 +39,7 @@ function ListCardServices() {
                     key={service.id}
                     service={service.name}
                     price={service.price}
+                    id={service.id}
                     />
                 ))
             ) : (

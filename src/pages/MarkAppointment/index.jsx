@@ -2,7 +2,7 @@ import Agende from "../../components/Agende"
 import ListCardDoutores from "../../components/ListCardDoutores"
 import Container from "./styles"
 
-function Dashboard() {
+function MarkAppointment() {
     return (
         <Container>
             <Agende />
@@ -10,4 +10,4 @@ function Dashboard() {
         </Container>
     )
 }
-export default Dashboard
+export default MarkAppointment

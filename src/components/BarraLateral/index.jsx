@@ -1,6 +1,8 @@
 import { Lateral } from "./styles"
-import { FaRegCalendar } from "react-icons/fa";
-import { IoHomeOutline } from "react-icons/io5";
+import { AiFillCarryOut } from "react-icons/ai";
+import { AiFillBook } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
+import { BiSolidUser } from "react-icons/bi";
 import logo from "../../assets/images/logo4 2.svg";
 import { Link } from "react-router-dom";
 
@@ -11,14 +13,30 @@ function BarraLateral() {
                 <img src={logo} alt="logo" />
             </div>
             <div className="icons">
-                <a href="">
-                    <IoHomeOutline />
-                    <Link className="inicio" to="/home">Inicio</Link>
-                </a>
-                <a href="">
-                    <FaRegCalendar />
-                    <Link className="dashboard" to="/dashboard">Meus agendamentos</Link>
-                </a>
+                <div>
+                    <a href="">
+                        <AiFillHome />
+                        <Link as="a" className="inicio" to="/home">Inicio</Link>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <AiFillCarryOut />
+                        <Link className="dashboard" to="/markappointment">Marcar consulta</Link>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <AiFillBook />
+                        <Link className="dashboard" to="/dashboard">Meus agendamentos</Link>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <BiSolidUser />
+                        <Link className="dashboard" to="/dashboard">Perfil</Link>
+                    </a>
+                </div>
             </div>
         </Lateral>
     )

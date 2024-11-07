@@ -38,7 +38,7 @@ function ProfileDoctor() {
     }, [id])
 
     const handleArrowClick = () => {
-        navigate(`/dashboard`);
+        navigate(-1);
     };
 
     useEffect(() => {

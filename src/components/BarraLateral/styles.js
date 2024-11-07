@@ -13,17 +13,21 @@ export const Lateral = styled.aside`
     & .icons {
         display: flex;
         flex-direction: column;
-        margin-left: 64px;
+        margin-left: 56px;
         margin-top: 64px;
 
+        & div {
+            margin-bottom: 64px;
+        }
+
         & a {
-            margin-bottom: 48px;
             display: flex;
+            align-items: center;
             text-decoration: none;
         }
 
         & svg {
-            font-size: 48px;
+            font-size: 56px;
             color: ${cores.branco};
             margin-right: 16px;
         }

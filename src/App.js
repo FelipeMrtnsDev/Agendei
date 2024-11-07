@@ -1,15 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
 import Rotas from "./routes";
 import { GlobalStyle } from "./styles/styles";
+import { AuthProvider } from "./auth/AuthProvider";
 
 function App() {
   return (
-    <>
       <BrowserRouter>
-      <GlobalStyle />
-        <Rotas />
+        <AuthProvider>
+          <GlobalStyle />
+          <Rotas />
+        </AuthProvider>
       </BrowserRouter>
-    </>
   )
 }
 

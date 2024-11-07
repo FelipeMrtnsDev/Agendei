@@ -27,7 +27,7 @@ export const ServicesContainer = styled.div`
         display: flex;
         align-items: center;
 
-        & button {
+        & .button {
             background-color: ${cores.azulmain};
             padding-inline: 32px;
             padding-block: 12px;
@@ -36,6 +36,7 @@ export const ServicesContainer = styled.div`
             color: ${cores.branco};
             cursor: pointer;
             transition: all ease 0.3s;
+            text-decoration: none;
 
             &:hover {
                 background-color: blue;
