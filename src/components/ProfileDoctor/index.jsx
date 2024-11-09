@@ -6,7 +6,7 @@ import medico from '../../assets/images/medico.png'
 import medica from '../../assets/images/medica.png'
 
 
-function ProfileDoctor() {
+function ProfileDoctor({titulo}) {
     const navigate = useNavigate()
     const { id } = useParams()
     const [name, setName] = useState('')
@@ -58,7 +58,7 @@ function ProfileDoctor() {
                     <FaArrowLeftLong className="seta" onClick={handleArrowClick}/>
                 </div>
                 <div className="servicos">
-                    <h1>Serviços</h1>
+                    <h1>{titulo}</h1>
                 </div>
             </div>
             <Doutor>

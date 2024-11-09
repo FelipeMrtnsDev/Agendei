@@ -1,9 +1,13 @@
-function MarkAppointment() {
+import DataPicker from "../DataPicker"
+import SchudleAppointment from "../SchudleAppointment"
+
+function MarkerAppointment() {
     return(
-        <div>
-            MarkAppointment
-        </div>
+        <>
+            <DataPicker />
+            <SchudleAppointment />
+        </>
     )
 }
 
-export default MarkAppointment
+export default MarkerAppointment

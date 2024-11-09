@@ -4,7 +4,7 @@ import ProfileDoctor from "../../components/ProfileDoctor"
 function DoctorProfile() {
     return(
         <>
-            <ProfileDoctor />
+            <ProfileDoctor titulo="Serviço" />
             <ListCardServices />
         </>
     )

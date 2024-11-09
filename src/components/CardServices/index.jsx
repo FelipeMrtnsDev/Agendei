@@ -9,10 +9,6 @@ function CardServices({ service, price, id }) {
         currency: 'BRL',
     }).format(price).replace('.', ',');
 
-    const handleclick = () => {
-        navigate(`markappointment/appointment/${id}`)
-    }
-
     return (
         <ServicesContainer>
             <div className="price">
@@ -20,7 +16,7 @@ function CardServices({ service, price, id }) {
                 <p>{formattedPrice}</p>
             </div>
             <div className="button-container">
-                <button onClick={handleclick} className="button">Agendar</button>
+                <Link to={`markappointment/appointment/${id}`} className="button">Agendar</Link>
             </div>
         </ServicesContainer>
     )

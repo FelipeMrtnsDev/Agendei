@@ -1,11 +1,11 @@
-import MarkAppointment from "../MarkAppointment"
+import MarkerAppointment from "../../components/MarkAppointment"
 import ProfileDoctor from "../../components/ProfileDoctor"
 
 function DataHora(){
     return(
         <>
-            <ProfileDoctor />
-            <MarkAppointment />
+            <ProfileDoctor titulo="Agendar consulta"/>
+            <MarkerAppointment />
         </>
     )
 }
