@@ -16,7 +16,7 @@ export const InfosDoctorContainer = styled.div`
         width: 100%;
         align-items: start;
         justify-content: center;
-        position: fixed;
+        position: absolute;
         top: 16px;
 
         & .servicos {
@@ -32,8 +32,8 @@ export const InfosDoctorContainer = styled.div`
         & .voltar {
             display: flex;
             position: absolute;
+            left: 0;
             justify-content: start;
-            width: 100%;
             margin-left: 32px;
             font-size: 40px;
 

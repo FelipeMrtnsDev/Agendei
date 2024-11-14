@@ -24,7 +24,9 @@ function FormLogin() {
             const data = await response.json();
     
             if (response.ok && data.token) {
+                console.log("Token recebido:", data.token);
                 localStorage.setItem('authToken', data.token);
+                console.log("Token armazenado no localStorage:", localStorage.getItem('authToken'));
                 navigate('/home');
             } else {
                 alert("Erro ao fazer login: " + (data.msg || "Credenciais inválidas"));

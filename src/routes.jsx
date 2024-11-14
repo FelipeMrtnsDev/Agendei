@@ -8,6 +8,9 @@ import MarkAppointment from "./pages/MarkAppointment";
 import Home from "./pages/Home";
 import DataHora from "./pages/DataHora";
 import PrivateRoute from "./PrivateRoute";
+import SuccessMessage from "./pages/SuccessMessage";
+import MyAppointments from "./pages/MyAppointments";
+import Profile from "./pages/Profile";
 
 const Rotas = () => {
   const token = localStorage.getItem("authToken");
@@ -20,9 +23,12 @@ const Rotas = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/markappointment" element={<MarkAppointment />} />
+          <Route path="/myappointments" element={<MyAppointments />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Route>
           <Route path="/doctor/:id" element={<DoctorProfile />} />
-          <Route path="/doctor/:id/markappointment/appointment/:id" element={<DataHora />} />
+          <Route path="/doctor/:id/markappointment/procedure/:pdid" element={<DataHora />} />
+          <Route path="/successmessage" element={<SuccessMessage />}/>
       </Route>
     </Routes>
   );

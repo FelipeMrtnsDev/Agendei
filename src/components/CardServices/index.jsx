@@ -16,7 +16,7 @@ function CardServices({ service, price, id }) {
                 <p>{formattedPrice}</p>
             </div>
             <div className="button-container">
-                <Link to={`markappointment/appointment/${id}`} className="button">Agendar</Link>
+                <Link to={`markappointment/procedure/${id}`} className="button">Agendar</Link>
             </div>
         </ServicesContainer>
     )

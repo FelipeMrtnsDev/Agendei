@@ -28,13 +28,13 @@ function BarraLateral() {
                 <div>
                     <a href="">
                         <AiFillBook />
-                        <Link className="dashboard" to="/dashboard">Meus agendamentos</Link>
+                        <Link className="dashboard" to="/myappointments">Meus agendamentos</Link>
                     </a>
                 </div>
                 <div>
                     <a href="">
                         <BiSolidUser />
-                        <Link className="dashboard" to="/dashboard">Perfil</Link>
+                        <Link className="dashboard" to="/profile">Perfil</Link>
                     </a>
                 </div>
             </div>

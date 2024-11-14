@@ -68,16 +68,24 @@ export const Container = styled.div`
     }
 
     & .react-calendar__month-view__days__day--weekend {
-        color: none; 
+        color: ${cores.cinza200};
     }
 
     & .react-calendar__tile--now:enabled:hover, .react-calendar__tile--now:enabled:focus {
-        background: ${cores.cinza100};
+        background: ${cores.preto200};
     }
 
     & .react-calendar__month-view__weekdays__weekday--weekend {
         & abbr {
             color: ${cores.vermelho};
+        }
+    }
+
+    .react-calendar__tile:hover {
+        background-color: ${cores.azulclaro};
+
+        & abbr {
+            color: ${cores.azulmain};
         }
     }
 
