@@ -8,7 +8,7 @@ import medica from '../../assets/images/medica.png'
 
 function ProfileDoctor({titulo}) {
     const navigate = useNavigate()
-    const { id } = useParams()
+    const { id, pdid } = useParams()
     const [name, setName] = useState('')
     const [gender, setGender] = useState('')
     const [area, setArea] = useState('')
@@ -16,6 +16,7 @@ function ProfileDoctor({titulo}) {
 
     useEffect(() => {
         const token = localStorage.getItem("authToken");
+        console.log("doutor: ", id, "procedure:", pdid)
         fetch(`http://localhost:3010/doctors/${id}`, {
             method: "GET",
             headers: {
@@ -31,6 +32,7 @@ function ProfileDoctor({titulo}) {
             setName(data.doctor.name)
             setGender(data.doctor.gender)
             console.log(data)
+            console.log("doutor: ", id, "procedure:", pdid)
         })
         .catch((error) => {
             console.error("Algo deu errado!", error)

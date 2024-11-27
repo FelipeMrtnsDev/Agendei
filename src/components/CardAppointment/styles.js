@@ -52,7 +52,7 @@ export const CardContainer = styled.div`
         margin-top: 16px;
 
         &:hover {
-            background-color: red;
+            background-color: ${cores.vermelho200};
         }
     }
 `

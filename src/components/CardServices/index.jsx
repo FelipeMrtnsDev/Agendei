@@ -2,7 +2,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { ServicesContainer } from "./styles"
 
 function CardServices({ service, price, id }) {
-    const navigate = useNavigate()
 
     const formattedPrice = new Intl.NumberFormat('pt-BR', {
         style: 'currency',

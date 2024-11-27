@@ -1,22 +1,61 @@
-import Profile from "../../assets/images/profile.png"
-import { ProfileContainer } from "./styles"
+import { useEffect, useState } from "react";
+import Profile from "../../assets/images/profile.png";
+import { ProfileContainer } from "./styles";
+import { IoLogOut } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 function ProfileInfo() {
+    const [user, setUser] = useState({});
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        fetch("http://localhost:3010/auth/user", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erro ao buscar dados do usuário.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            setUser(data);
+        })
+        .catch((error) => {
+            console.error("Algo deu errado!", error);
+            handleDisconnectClick();
+        });
+    }, []);
+
+    const handleDisconnectClick = () => {
+        localStorage.removeItem("authToken"); 
+        navigate("/login"); 
+    };
+
     return (
         <ProfileContainer>
             <div className="image">
-                <img src={Profile} alt={Profile} />
+                <img src={Profile} alt="Foto de perfil" />
             </div>
             <div className="name">
-                <h2>nome:</h2>
-                <p>Felipe</p>
+                <h2>Nome:</h2>
+                <p>{user.name || "Usuário não identificado"}</p>
             </div>
             <div className="email">
-                <h2>email:</h2>
-                <p>felipe@gmail.com</p>
+                <h2>Email:</h2>
+                <p>{user.email || "Email não identificado"}</p>
             </div>
+            <button onClick={handleDisconnectClick}>
+                Desconectar
+                <IoLogOut className="icon" />
+            </button>
         </ProfileContainer>
-    )
+    );
 }
 
-export default ProfileInfo
+export default ProfileInfo;

@@ -18,5 +18,6 @@ export const cores = {
     cinza100: "#e4e4e4",
     branco100: "#f1f5f4",
     branco: "#fff",
-    vermelho: "#df5951"
+    vermelho: "#df5951",
+    vermelho200: "#D21C0F" 
 }

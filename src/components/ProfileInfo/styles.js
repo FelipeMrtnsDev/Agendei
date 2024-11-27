@@ -8,6 +8,31 @@ export const ProfileContainer = styled.div`
     flex-direction: column;
     margin-top: 32px;
 
+    & button {
+        background-color: ${cores.vermelho};
+        padding-inline: 32px;
+        padding-block: 12px;
+        border: none;
+        border-radius: 8px;
+        color: ${cores.branco};
+        cursor: pointer;
+        transition: all ease 0.3s;
+        text-decoration: none;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:hover {
+            background-color: ${cores.vermelho200};
+        }
+
+        & .icon {
+            font-size: 20px;
+        }
+
+    }
+
     & .image {
         background-color: ${cores.azulmain};
         width: 160px;
