@@ -20,7 +20,7 @@ export const BoasVindasContainer = styled.div`
         }
     }
 
-    & .btn-agendar {
+    & .btn {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -35,6 +35,10 @@ export const BoasVindasContainer = styled.div`
         cursor: pointer;
         transition: all ease 0.3s;
         text-decoration: none;
+
+        & p {
+            margin: 0;
+        }
 
         & svg {
             font-size: 24px;

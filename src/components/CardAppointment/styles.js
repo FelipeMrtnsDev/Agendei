@@ -7,7 +7,8 @@ export const CardContainer = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 800px;
-    height: 184px;
+    height: 220px;
+    padding: 12px;
     background-color: ${cores.branco100};
     border: 2px solid ${cores.cinza200};
     border-radius: 16px;
@@ -31,11 +32,19 @@ export const CardContainer = styled.div`
         & .data {
             display: flex;
             align-items: center;
+
+            & p {
+                margin: 0;
+            }
         }
 
         & .hourly {
             display: flex;
             align-items: center;
+
+            & p {
+                margin: 0;
+            }
         }
     }
 

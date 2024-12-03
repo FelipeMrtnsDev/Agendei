@@ -56,6 +56,11 @@ export const ProfileContainer = styled.div`
         & p {
             font-size: 20px;
             color: ${cores.preto200};
+            margin: 0;
+        }
+
+        & h2 {
+            margin: 0;
         }
     }
 
@@ -69,6 +74,11 @@ export const ProfileContainer = styled.div`
         & p {
             font-size: 20px;
             color: ${cores.preto200};
+            margin: 0;
+        }
+
+        & h2 {
+            margin: 0;
         }
     }
 `

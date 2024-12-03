@@ -10,16 +10,17 @@ export const CardsContainer = styled.div`
     margin-bottom: 32px;
 `
 
-export const DoctorsInfo = styled.table`
+export const DoctorsInfo = styled.div`
     width: 60%;
     background-color: ${cores.branco100};
-    padding: 24px;
-    border-radius: 16px;
+    padding: 12px;
     border: 2px solid ${cores.cinza200};
+    border-radius: 16px;
     
     & .infos-card {
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
+        padding: 8px;
     }
 
     & .titulo {
