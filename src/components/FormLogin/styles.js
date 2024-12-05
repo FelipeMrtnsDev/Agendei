@@ -63,7 +63,8 @@ export const Formulario = styled.form`
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid ${cores.cinza100};
+            outline: 1px solid ${cores.azulmain};
+            box-shadow: 0px 0px 3px ${cores.azulmain};
         }
     }
 
@@ -74,7 +75,8 @@ export const Formulario = styled.form`
         border-radius: 4px;
 
         &:focus {
-            outline: 3px solid ${cores.cinza100};
+            outline: 1px solid ${cores.azulmain};
+            box-shadow: 0px 0px 3px ${cores.azulmain};
         }
     }
 

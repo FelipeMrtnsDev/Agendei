@@ -6,7 +6,7 @@ import { Dropdown, Space } from 'antd';
 import { useState } from 'react';
 
 function Header({ classe }) {
-    const [ativado, setAtivado] = useState(classe)
+    const [ativado, setAtivado] = useState(classe);
 
     const items = [
         {
@@ -42,17 +42,17 @@ function Header({ classe }) {
                 </div>
                 <div className="perfil">
                     <Dropdown menu={{ items }} trigger={['click']}>
-                        <a onClick={(e) => e.preventDefault()}>
+                        <div>
                             <Space>
                                 <h4>Felipe Martins</h4>
                                 <DownOutlined className="seta" />
                             </Space>
-                        </a>
+                        </div>
                     </Dropdown>
                 </div>
             </div>
         </Container>
-    )
+    );
 }
 
-export default Header
+export default Header;

@@ -7,6 +7,7 @@ export const Container = styled.div`
     align-items: baseline;
     margin-inline: 32px;
     margin-top: 48px;
+    margin-bottom: 32px;
 
     & .novo-agendamento {
         display: flex;
@@ -17,6 +18,7 @@ export const Container = styled.div`
         & h1 {
             margin-right: 32px;
             margin-bottom: 0px;
+            font-weight: bold;
         }
     }
 
@@ -45,6 +47,11 @@ export const Container = styled.div`
             border-radius: 6px;
             border: 1px solid ${cores.cinza100};
             margin-right: 32px;
+
+                &:focus {
+                outline: 1px solid ${cores.azulmain};
+                box-shadow: 0px 0px 3px ${cores.azulmain};
+            }
         }
 
         & button {
