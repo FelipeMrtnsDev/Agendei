@@ -1,6 +1,10 @@
 # Agendei
 
-**Agendei** é um projeto de agendamentos médicos desenvolvido para simplificar o processo de agendamento de consultas. Com uma interface intuitiva, os usuários podem agendar consultas com médicos de forma rápida e eficiente, escolhendo o serviço, data e horário disponíveis. O sistema oferece dois perfis: **administrador** e **usuário**, garantindo flexibilidade e controle conforme a necessidade.
+**Agendei**é uma plataforma digital inovadora destinada a facilitar o processo de agendamento de consultas médicas, oferecendo uma experiência de usuário fluida e prática. Desenvolvido para atender tanto profissionais da saúde quanto pacientes, o sistema permite que os usuários agendem consultas de forma simples e eficiente, com a possibilidade de selecionar o serviço desejado, escolher uma data e horário que melhor se adequem à sua agenda, e realizar o agendamento de maneira rápida e sem complicação.
+
+O sistema é dividido em dois perfis principais: **administrador** e **usuário**. O administrador tem acesso a funcionalidades de gestão, como o controle de horários disponíveis, serviços oferecidos e a visualização de agendamentos realizados. Já o usuário, ou paciente, pode criar uma conta, fazer login e agendar suas consultas de forma direta, visualizando as opções de serviços médicos disponíveis, consultando os horários dos profissionais e confirmando o agendamento.
+
+Com foco na simplicidade e na eficiência, o projeto visa otimizar o tempo dos usuários e melhorar a organização dos agendamentos, proporcionando uma plataforma moderna, responsiva e de fácil uso.
 
 ## Tecnologias Utilizadas
 
