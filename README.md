@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Agendei
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Agendei** é um projeto de agendamentos médicos desenvolvido para simplificar o processo de agendamento de consultas. Com uma interface intuitiva, os usuários podem agendar consultas com médicos de forma rápida e eficiente, escolhendo o serviço, data e horário disponíveis. O sistema oferece dois perfis: **administrador** e **usuário**, garantindo flexibilidade e controle conforme a necessidade.
 
-## Available Scripts
+## Tecnologias Utilizadas
 
-In the project directory, you can run:
+- **Backend**: Node.js, Express, JWT (JSON Web Token) para autenticação, MySQL
+- **Frontend**: React, React-Router, Styled Components
+- **Outras Ferramentas**: Git, npm, REST API
 
-### `npm start`
+## Instalação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Siga os passos abaixo para configurar e executar o projeto em sua máquina local.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 1. Clone o Repositório
 
-### `npm test`
+**Clone o repositório para sua máquina local usando o seguinte comando:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/FelipeMrtnsDev/Agendei
+```
 
-### `npm run build`
+# 2. Configuração do Backend (Node + Express)
+**Clone o repositório para sua máquina local usando o seguinte comando:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone https://github.com/FelipeMrtnsDev/Api_Agendamentos
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Instale as dependências do backend:**
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Execute o servidor do backend:**
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O backend estará rodando, normalmente, na porta 3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 3. Configuração do Frontend (React)
+### Navegue até a pasta do frontend:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Instale as dependências do frontend:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm install
+```
+**Execute o frontend:**
+```
+npm start
+```
+**O frontend estará rodando, normalmente, na porta 3000.**
 
-## Learn More
+### Como Usar?
+Crie uma conta no site.
+Faça login usando seu e-mail e senha.
+Após o login, você poderá agendar sua consulta, escolhendo o serviço, data e horário disponíveis.
+Finalize o agendamento e aguarde a confirmação.
+Vídeo de Demonstração
+Assista a uma demonstração do projeto no link abaixo:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Demonstração do Projeto](https://github.com/FelipeMrtnsDev/Agendei/blob/main/public/Screenshot_110.png)](https://www.youtube.com/watch?v=e4e9Vta5i1I)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Licença
+Este projeto é pessoal e não possui licença. É utilizado apenas para portfólio.
