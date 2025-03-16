@@ -1,14 +1,13 @@
 import { Container } from "./styles"
 
-function CardAgendamentosAdmin({ paciente, doutor, servico, data, valor, hora }) {
+function CardDoutoresAdmin({ gender, name, area, started }) {
     return (
         <>
             <Container>
-                <td>{paciente}</td>
-                <td>{doutor}</td>
-                <td>{servico}</td>
-                <td>{data} {hora}h</td>
-                <td>{valor}</td>
+                <td>{gender}</td>
+                <td>{name}</td>
+                <td>{area}</td>
+                <td>{started}h</td>
                 <td>
                     <button className="editar">editar</button>
                     <button className="apagar">apagar</button>
@@ -19,4 +18,4 @@ function CardAgendamentosAdmin({ paciente, doutor, servico, data, valor, hora })
     )
 }
 
-export default CardAgendamentosAdmin
+export default CardDoutoresAdmin

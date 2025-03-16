@@ -10,6 +10,6 @@ export const Container = styled.div`
         padding: 16px;
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 15%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 15%;
     }
 `

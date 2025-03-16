@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import CardAgendamentosAdmin from "../CardAgendamentoAdmin";
 import { Container } from "./styles";
+import CardDoutoresAdmin from "../CardDoctorsAdmin";
 
-function ListAgendamentosAdmin() {
-    const [appointments, setAppointments] = useState([]);
+function ListDoctorsAdmin() {
+    const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
         const token = localStorage.getItem("authToken");
 
-        fetch("http://localhost:3010/appointments", {
+        fetch("http://localhost:3010/doctors", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json", 
@@ -23,12 +23,26 @@ function ListAgendamentosAdmin() {
             })
             .then((data) => {
                 console.log(data);
-                setAppointments(data);
+                setDoctors(data);
             })
             .catch((error) => {
                 console.error("Erro ao buscar os agendamentos:", error);
             });
     }, []);
+
+    function formatDateTime(dateString) {
+        const date = new Date(dateString);
+            const formattedDate = date.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+        });
+        const formattedTime = date.toLocaleTimeString('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+        });
+        return `${formattedDate} ${formattedTime}`;
+    }
 
     return (
         <Container>
@@ -36,23 +50,21 @@ function ListAgendamentosAdmin() {
                 <thead>
                     <hr />
                     <tr>
-                        <th>Paciente</th>
+                        <th>Gênero</th>
                         <th>Médico</th>
-                        <th>Serviço</th>
-                        <th>Data/Hora</th>
-                        <th>Valor</th>
+                        <th>Área</th>
+                        <th>iniciado em:</th>
                     </tr>
                     <hr />
                 </thead>
                 <tbody>
-                    {appointments.map((appointment) => (
-                        <CardAgendamentosAdmin
-                            key={appointment.id} 
-                            data={appointment.date}
-                            doutor={appointment.doctor.name}
-                            paciente={appointment.usuario.name}
-                            servico={appointment.topic}
-                            valor={appointment.value} 
+                    {doctors.map((doctor) => (
+                        <CardDoutoresAdmin
+                            area={doctor.area}
+                            gender={doctor.gender}
+                            name={doctor.name}
+                            started={formatDateTime(doctor.createdAt)}
+                            key={doctor.id}
                         />
                     ))}
                 </tbody>
@@ -61,4 +73,4 @@ function ListAgendamentosAdmin() {
     );
 }
 
-export default ListAgendamentosAdmin;
+export default ListDoctorsAdmin;
