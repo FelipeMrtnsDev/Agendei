@@ -3,6 +3,7 @@ import { Container, Imagem, Login, Formulario, Registrar } from './styles'
 import doutor from '../../assets/images/fundo 1.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 function FormRegister() {
     const [ name, setName ] = useState('')
@@ -26,14 +27,13 @@ function FormRegister() {
             const data = await response.json()
 
             if (response.ok) {
-                alert('Registrado com sucesso!')
+                toast.success('Registrado com sucesso!')
                 navigate('/login')
             } else {
-                alert("Erro ao fazer login: " + data.msg);
+                toast.error("Erro ao fazer login: " + data.msg);
             }
         }catch(error) {
-            console.error(error)
-            alert("erro ao se autentificar", error.msg)
+            console.error("erro ao se autentificar", error.msg)
         }
     }
 

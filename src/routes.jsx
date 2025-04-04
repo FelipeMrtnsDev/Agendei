@@ -13,6 +13,7 @@ import MyAppointments from "./pages/MyAppointments";
 import Profile from "./pages/Profile";
 import AgendamentosAdmin from "./pages/AgendamentosAdmin";
 import DoctorsAdmin from "./pages/DoctorsAdmin";
+import CreateAppointmentAdmin from "./pages/CreateAppointmentAdmin";
 
 const Rotas = () => {
   const token = localStorage.getItem("authToken");
@@ -32,6 +33,7 @@ const Rotas = () => {
           <Route path="/doctor/:id/markappointment/procedure/:pdid" element={<DataHora />} />
           <Route path="/successmessage" element={<SuccessMessage />}/>
           <Route path="/admin/appointments" element={<AgendamentosAdmin />} />
+          <Route path="/admin/appointments/create" element={<CreateAppointmentAdmin />} />
           <Route path="/admin/doctors" element={<DoctorsAdmin />} />
       </Route>
     </Routes>

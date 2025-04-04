@@ -1,12 +1,11 @@
 import logoBranca from "../../assets/images/logo3 2.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Container } from "./styles"
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
-import { useState } from 'react';
 
 function Header({ classe }) {
-    const [ativado, setAtivado] = useState(classe);
+    const navigate = useNavigate()
 
     const items = [
         {
@@ -28,16 +27,16 @@ function Header({ classe }) {
 
     return (
         <Container>
-            <div className="imagem">
+            <div className="imagem" onClick={() => navigate("/home")}>
                 <img src={logoBranca} alt="logo" />
             </div>
             <div className="container-links">
                 <div className="links">
                     <Link className="link" to="/admin/appointments">
-                        <h2 className={`${ativado === "agendamentos" ? "activated" : ""}`}>Agendamentos</h2>
+                        <h2 className={`${classe === "agendamentos" ? "activated" : ""}`}>Agendamentos</h2>
                     </Link>
                     <Link className="link" to="/admin/doctors">
-                        <h2 className={`${ativado === "medicos" ? "activated" : ""}`}>Médicos</h2>
+                        <h2 className={`${classe === "medicos" ? "activated" : ""}`}>Médicos</h2>
                     </Link>
                 </div>
                 <div className="perfil">

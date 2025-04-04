@@ -17,6 +17,8 @@ export const ContainerMessage = styled.div`
     }
 
     & button {
+        display: flex;
+        align-items: center;
         background-color: ${cores.azulmain};
         padding-inline: 32px;
         padding-block: 12px;
@@ -25,9 +27,8 @@ export const ContainerMessage = styled.div`
         color: ${cores.branco};
         cursor: pointer;
         transition: all ease 0.3s;
+        text-align: center;
         text-decoration: none;
-        display: flex;
-        align-items: center;
 
         &:hover {
             background-color: ${cores.azulclaro};
@@ -37,6 +38,10 @@ export const ContainerMessage = styled.div`
         & svg {
             font-size: 24px;
             margin-right: 8px;
+        }
+
+        & p {
+            margin-bottom: 0px;
         }
     }
 

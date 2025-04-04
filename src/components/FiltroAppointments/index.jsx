@@ -3,10 +3,13 @@ import { DatePicker } from 'antd';
 import 'antd/dist/reset.css';
 import { useEffect, useState } from "react";
 import dayjs from 'dayjs';
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function FiltroAppointments() {
     const [doctors, setDoctors] = useState([]);
     const [startDate, setStartDate] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("authToken");
@@ -19,23 +22,19 @@ function FiltroAppointments() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log("data:", data);
             setDoctors(data);
         })
         .catch((err) => {
-            console.log(err);
+            toast.log("Erro ao tentar encontrar doutores");
         });
     }, []);
 
     const handleStartDateChange = (date) => {
         const formattedDate = date ? dayjs(date).format('DD/MM/YYYY') : '';
-        console.log("Data inicial selecionada:", formattedDate);
-        setStartDate(date); 
     };
 
     const handleEndDateChange = (date) => {
         const formattedDate = date ? dayjs(date).format('DD/MM/YYYY') : '';
-        console.log("Data final selecionada:", formattedDate);
     };
 
     const disableEndDate = (current) => {
@@ -46,11 +45,22 @@ function FiltroAppointments() {
         );
     };
 
+    const handleClick = () => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            console.log("Não há token, redirecionando para a home.");
+            navigate("/home"); 
+        } else {
+            console.log("Token encontrado, redirecionando para o agendamento.");
+            navigate("/admin/appointments/create");  
+        }
+    };
+
     return (
         <Container>
             <div className="novo-agendamento">
                 <h1>Agendamentos</h1>
-                <button className="btn-agendamento">Novo Agendamento</button>
+                <Link to="/admin/appointments/create" className="btn-agendamento" >Novo Agendamento</Link>
             </div>
             <div className="filtro">
                 <DatePicker 

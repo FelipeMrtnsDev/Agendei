@@ -24,6 +24,7 @@ export const Container = styled.div`
 
     & .btn-agendamento {
         padding: 10px;
+        text-decoration: none;
         border-radius: 6px;
         background-color: transparent;
         border: 1px solid ${cores.azulmain};

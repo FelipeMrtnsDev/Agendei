@@ -1,6 +1,7 @@
 import CardDoutores from "../CardDoutores";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function ListCardDoutores() {
     const [doutores, setDoutores] = useState([]);
@@ -16,11 +17,9 @@ function ListCardDoutores() {
             }
         })
         .then((response) => {
-            console.log(response);
             return response.clone().json(); 
         })
         .then((data) => {
-            console.log(data);
             setDoutores(data);
         })
             .catch((error) => {

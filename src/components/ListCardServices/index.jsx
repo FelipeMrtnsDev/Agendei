@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import CardServices from "../CardServices"
 import { useEffect, useState } from "react";
 import { NoService } from "./styles";
+import { toast } from "react-toastify";
 
 function ListCardServices() {
     const [services, setServices] = useState([])
@@ -21,11 +22,10 @@ function ListCardServices() {
                 return response.json()
             })
             .then((data) => {
-                console.log(data)
                 setServices(data)
             })
             .catch((error) => {
-                console.error("Algo deu errado!", error)
+                toast.error("Algo deu errado!", error)
             })
     }, [id])
     

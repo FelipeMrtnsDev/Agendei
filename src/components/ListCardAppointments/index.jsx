@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CardAppointment from "../CardAppointment";
 import { Message } from "./styles";
+import { toast } from "react-toastify";
 
 function ListCardAppointments() {
     const [appointments, setAppointments] = useState([]);
@@ -18,7 +19,6 @@ function ListCardAppointments() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             setAppointments(data);
         })
         .catch((error) => {
@@ -41,7 +41,7 @@ function ListCardAppointments() {
         currentDate.setHours(hours, minutes, seconds);
 
         if (isNaN(currentDate)) {
-            console.error("Hora inválida:", timeString);
+            toast.error("Hora inválida:", timeString);
             return ""; 
         }
 
@@ -60,13 +60,12 @@ function ListCardAppointments() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             setAppointments((prevAppointments) =>
                 prevAppointments.filter((appointment) => appointment.id !== appointmentId)
             );
         })
         .catch((error) => {
-            console.error("Erro ao cancelar consulta:", error);
+            toast.error("Erro ao cancelar consulta:", error);
         });
     };
 

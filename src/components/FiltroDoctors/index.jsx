@@ -3,6 +3,7 @@ import { DatePicker } from 'antd';
 import 'antd/dist/reset.css';
 import { useEffect, useState } from "react";
 import dayjs from 'dayjs';
+import { toast } from "react-toastify";
 
 function FiltroDoctors() {
     const [doctors, setDoctors] = useState([]);
@@ -19,23 +20,19 @@ function FiltroDoctors() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log("data:", data);
             setDoctors(data);
         })
         .catch((err) => {
-            console.log(err);
+            toast.log("Erro ao tentar achar os doutores");
         });
     }, []);
 
     const handleStartDateChange = (date) => {
         const formattedDate = date ? dayjs(date).format('DD/MM/YYYY') : '';
-        console.log("Data inicial selecionada:", formattedDate);
-        setStartDate(date); 
     };
 
     const handleEndDateChange = (date) => {
         const formattedDate = date ? dayjs(date).format('DD/MM/YYYY') : '';
-        console.log("Data final selecionada:", formattedDate);
     };
 
     const disableEndDate = (current) => {

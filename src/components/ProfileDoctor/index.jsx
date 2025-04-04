@@ -16,7 +16,6 @@ function ProfileDoctor({titulo}) {
 
     useEffect(() => {
         const token = localStorage.getItem("authToken");
-        console.log("doutor: ", id, "procedure:", pdid)
         fetch(`http://localhost:3010/doctors/${id}`, {
             method: "GET",
             headers: {
@@ -31,8 +30,6 @@ function ProfileDoctor({titulo}) {
             setArea(data.doctor.area)
             setName(data.doctor.name)
             setGender(data.doctor.gender)
-            console.log(data)
-            console.log("doutor: ", id, "procedure:", pdid)
         })
         .catch((error) => {
             console.error("Algo deu errado!", error)

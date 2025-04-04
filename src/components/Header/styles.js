@@ -33,12 +33,19 @@ export const Container=styled.header`
         }
     }
 
+    & .perfil {
+        & h4 {
+            margin-bottom: 0;
+        }
+    }
+
     & .imagem {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 74px;
         margin-left: 24px;
+        cursor: pointer;
     }
 
     & img {
@@ -59,6 +66,7 @@ export const Container=styled.header`
             font-size: 16px;
             color: ${cores.branco};
             font-weight: 400;
+            margin-bottom: 0;
         }
 
         & .activated {

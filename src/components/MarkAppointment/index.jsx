@@ -3,8 +3,7 @@ import DataPicker from "../DataPicker";
 import SchudleAppointment from "../SchudleAppointment";
 import { useNavigate, useParams } from "react-router-dom";
 import { BotaoAgendar } from "./styles";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 function MarkerAppointment() {
     const { id, pdid } = useParams();
@@ -37,15 +36,13 @@ function MarkerAppointment() {
             throw new Error(result.msg);
         })
         .then((data) => {
-            console.log("Dados da consulta:", data);
             navigate("/successmessage");
         })
-        .catch((error) => console.error("Erro ao registrar consulta:", error));
+        .catch((error) => toast.error("Erro ao registrar consulta:", error));
     };
 
     return (
         <>
-            <ToastContainer />
             <DataPicker selectedDate={selectedDate} onDateChange={setSelectedDate} />
             <SchudleAppointment time={time} onTimeChange={setTime} />
             <BotaoAgendar>

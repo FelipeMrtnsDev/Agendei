@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container } from "./styles";
 import CardDoutoresAdmin from "../CardDoctorsAdmin";
+import { toast } from "react-toastify";
 
 function ListDoctorsAdmin() {
     const [doctors, setDoctors] = useState([]);
@@ -22,11 +23,10 @@ function ListDoctorsAdmin() {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 setDoctors(data);
             })
             .catch((error) => {
-                console.error("Erro ao buscar os agendamentos:", error);
+                toast.error("Erro ao buscar os agendamentos:", error);
             });
     }, []);
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CardAgendamentosAdmin from "../CardAgendamentoAdmin";
 import { Container } from "./styles";
+import { toast } from "react-toastify";
 
 function ListAgendamentosAdmin() {
     const [appointments, setAppointments] = useState([]);
@@ -8,7 +9,7 @@ function ListAgendamentosAdmin() {
     useEffect(() => {
         const token = localStorage.getItem("authToken");
 
-        fetch("http://localhost:3010/appointments", {
+        fetch("http://localhost:3010/appointments/byadmin", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json", 
@@ -22,11 +23,10 @@ function ListAgendamentosAdmin() {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 setAppointments(data);
             })
             .catch((error) => {
-                console.error("Erro ao buscar os agendamentos:", error);
+                toast.error("Erro ao buscar os agendamentos:", error);
             });
     }, []);
 
@@ -47,6 +47,7 @@ function ListAgendamentosAdmin() {
                 <tbody>
                     {appointments.map((appointment) => (
                         <CardAgendamentosAdmin
+                            id={appointment.id}
                             key={appointment.id} 
                             data={appointment.date}
                             doutor={appointment.doctor.name}

@@ -27,7 +27,6 @@ function ProfileInfo() {
             setUser(data);
         })
         .catch((error) => {
-            console.error("Algo deu errado!", error);
             handleDisconnectClick();
         });
     }, []);

@@ -3,6 +3,7 @@ import doutor from '../../assets/images/fundo 1.png';
 import { Container, Imagem, Login, Formulario, Registrar } from './styles';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 function FormLogin() {
     const [email, setEmail] = useState('');
@@ -24,16 +25,14 @@ function FormLogin() {
             const data = await response.json();
     
             if (response.ok && data.token) {
-                console.log("Token recebido:", data.token);
                 localStorage.setItem('authToken', data.token);
-                console.log("Token armazenado no localStorage:", localStorage.getItem('authToken'));
                 navigate('/home');
             } else {
-                alert("Erro ao fazer login: " + (data.msg || "Credenciais inválidas"));
+                toast.error("Erro ao fazer login: " + (data.msg || "Credenciais inválidas"));
             }
         } catch (error) {
             console.error("Erro ao realizar login:", error);
-            alert("Erro ao realizar login. Verifique sua conexão e tente novamente.");
+            toast.error("Erro ao realizar login. Verifique sua conexão e tente novamente.");
         }
     };
     
