@@ -1,13 +1,20 @@
 import React, { createContext, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const verifyToken = async () => {
+      const publicPaths = ["/login", "/register"]; // rotas que não exigem auth
+      if (publicPaths.includes(location.pathname)) {
+        return; // Não redireciona nessas páginas
+      }
+  
       const token = localStorage.getItem("authToken");
       if (token) {
         try {
@@ -22,12 +29,10 @@ export const AuthProvider = ({ children }) => {
             }
           );
           if (response.status === 401) {
-            console.error("Token inválido ou expirado. Removendo...");
             localStorage.removeItem("authToken");
             navigate("/login");
           }
         } catch (error) {
-          console.error("Erro ao verificar o token", error);
           localStorage.removeItem("authToken");
           navigate("/login");
         }
@@ -35,8 +40,9 @@ export const AuthProvider = ({ children }) => {
         navigate("/login");
       }
     };
+  
     verifyToken();
-  }, [navigate]);
+  }, [location.pathname, navigate]);
 
   return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
 };
